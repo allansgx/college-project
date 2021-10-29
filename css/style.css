@@ -328,6 +328,9 @@ h1 {
 }
 
 @media (max-width: 991px){
+	html, body {
+		max-width: 100%; overflow-x: hidden; 
+	}
 	#navbarSupportedContent ul li a{
 		padding: 12px 30px;
 	}
@@ -379,17 +382,16 @@ h1 {
 	.btnPDF {
 		display: none;
 	}
+}
 
-	@media (max-width: 557px){
-		.divInformation {
-			width: 100%;
-			height: 700px;
-		}
-		.lottieInformation {
-			width: 550px; 
-			height: 100px;
-			margin-top: -22%;
-		}
+@media (max-width: 557px){
+	.divInformation {
+		width: 100%;
+		height: 700px;
 	}
-
+	.lottieInformation {
+		width: 550px; 
+		height: 100px;
+		margin-top: -22%;
+	}
 }
