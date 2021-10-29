@@ -376,6 +376,10 @@ h1 {
 		height: 800px;
 	}
 
+	.btnPDF {
+		display: none;
+	}
+
 	@media (max-width: 557px){
 		.divInformation {
 			width: 100%;
