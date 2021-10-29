@@ -132,10 +132,10 @@ function gerarPDF() {
 		format: 'letter'
 	  })
 	
-	var imgData = "/projeto/img/sinaisLibras.png"; // base-64
+	var imgData = 'https://systemdeaf.netlify.app/img/sinaisLibras.png'; // base-64
 	var doc = new jsPDF();
 	doc.setFontSize(40);
-	doc.text(35, 25, "Alfabeto em Libras");
+	// doc.text(35, 25, "Alfabeto em Libras");
 	doc.addImage(imgData, 'JPEG', 15, 40, 180, 180);
 	doc.save('sinais_libras.pdf')
 }
