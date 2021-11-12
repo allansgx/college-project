@@ -1,0 +1,38 @@
+/* TITULO */
+.typewriter {
+    font-family: 'Righteous', cursive;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.descInicio {
+    overflow: hidden;
+    margin: 0 auto;
+    display: inline-block;
+    font-weight: normal;
+
+    &:after{
+        content: '';
+        display: inline-block;
+        background-color: white;
+        margin-left: 2px;
+        height: 25px;
+        width: 4px;
+        animation: cursor 0.4s infinite;
+    }
+}
+
+/* Efeito */
+@keyframes cursor {
+0% { opacity: 1; }
+    49% { opacity: 1; }
+    50% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+// Ativa quando clica em começar
+.background {
+    background-color: white;
+    border-radius: 10px;
+}

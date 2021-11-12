@@ -1,0 +1,189 @@
+@import './components/function';
+@import './components/configHome';
+@import './components/responsivePhone';
+
+// Variaveis
+$color-neutral: transparent;
+$color-wrong: red;
+$color-correct: green;
+
+$color-background: #1a1a1a;
+
+$color-btn: #0D5166;
+$color-btn-hover:rgb(27, 142, 177)6;
+
+// ---------------------------
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Righteous', cursive;
+
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    @include flexCenter();
+
+    width: 100vw;
+    height: 100vh;
+
+    background-color: $color-background;
+    overflow: hidden;
+}
+
+.container {
+    width: 800px;
+    max-width: 80%;
+    padding: 10px;
+    position: fixed;
+
+    .tittleQuiz {
+        text-align: center;
+    }
+    
+    hr {
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        }
+    
+    .btn {
+        border: 1px solid $color-btn;
+        background-color: $color-btn;
+        padding: 12px 10px;
+        color: white;
+        outline: none;
+        transition: all .3s ease;
+        box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+
+        &:hover {
+            border-color: black;
+        }
+
+        &:active {
+            transform: scale(1.1);
+        }
+    } 
+    .btnHome {
+        background-color: $color-btn;
+        transition: all .3s ease;
+
+        &:hover {
+            border-color: black;
+            color: black;
+            background-color: whitesmoke;
+            transform: scale(1.2);
+        }
+    }
+
+    .btn-back {
+        float: left;
+        color: $color-btn;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    .imgQuestion {
+        background-color: $color-background-img;
+        padding: 50px 50px 10px 50px;
+        border-radius: 10px;
+    }
+}
+
+.decorationIcon {
+    // @include flexCenter();
+    display: flex;
+    align-items: center;
+    margin-left: -45rem;
+    z-index: 1;
+    margin-top: 5rem;
+}
+
+.divDecoration {
+    position: fixed;
+
+    .decoration {
+        @include ballDecoration(-32rem, 5rem, 300px, 300px);
+    }
+    // .decoration2 {
+    //     @include ballDecoration(-90%, 50%, 700px, 700px, red);
+    // }
+    // .decoration3 {
+    //     @include ballDecoration(-90%, 50%, 700px, 700px, yellow);
+    // }
+    // .decoration4{
+    //     @include ballDecoration(-100%, 50%, 700px, 700px, green);
+    // }
+}
+
+.divCorrectQuestion {
+
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+    .counterQuestion {
+        @include buttonInfo(#0D5166)
+    }
+
+    .labelCounterQuestion {
+        padding-left: 10px;
+        padding-right: 40px;
+    }
+
+    .scoreCorrectQuestion {
+        @include buttonInfo(#1eb2df)
+    }
+    
+    .labelCorrectQuestion {
+        color: black;
+        padding-left: 10px;
+    }
+}
+
+// CONFIG BUTTON ----------------------------------------
+
+.btn-grid {
+    display: grid;
+    grid-template-columns: 2fr 2fr;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.btn.correct {
+    @include colorButton(correct)
+}
+
+.btn.wrong {
+    @include colorButton(wrong)
+}
+
+.start-btn, .next-btn, .scoreboard-btn {
+    font-size: 1.5rem;
+    padding: 15px 20px;
+
+    a {
+        text-decoration: none;
+        color: white;
+
+        &:hover {
+            color: black;
+        }
+    }
+}
+
+.controls {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.desabilitaEventos{
+    pointer-events: none;
+    cursor: default;
+  }

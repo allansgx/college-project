@@ -1,0 +1,46 @@
+@mixin flexCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Estilização da cor dos botões
+$btn-color-wrong: #286791;
+$btn-color-correct: rgb(18, 114, 23);
+
+@mixin colorButton($background-color) {
+    @if $background-color == correct {
+        background-color: $btn-color-correct;
+        color: black;
+    } @else if $background-color == wrong {
+        background-color: $btn-color-wrong;
+        color: white;
+    } @else {
+        background-color: $color-btn;
+        color: white;
+    }
+}
+
+// Botão em que aparece os acertos, erros e a questão
+@mixin buttonInfo($background-color, $color: white) {
+    width: 30px;
+    height: 30px;
+    background-color: $background-color;
+    color: $color;
+    border-radius: 50%;
+
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+                rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+                rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+
+// Bola decoration home
+@mixin ballDecoration($margin-left, $margin-top, $width, $height, $border-radius: 50%) {
+    margin-left: $margin-left;
+    margin-top: $margin-top;
+    width: $width;
+    height: $height;
+    background: rgb(0,0,0);
+    background: linear-gradient(35deg, rgba(0,0,0,1) 25%, rgba(38,34,101,1) 67%, rgba(25,118,210,1) 95%);
+    border-radius: $border-radius;
+}

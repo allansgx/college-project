@@ -16,7 +16,7 @@
 
 <body>
 
-    <nav class="navbar navbar-expand-custom navbar-mainbg" id="alfabetoLibras">
+    <nav class="navbar navbar-expand-custom navbar-mainbg" id="Início">
         <a class="navbar-brand navbar-logo" id="logo" href="#">System for The Deaf</a>
         <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false"
             aria-label="Toggle navigation">
@@ -29,13 +29,16 @@
                     <div class="right"></div>
                 </div>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#alfabetoLibras">Início</a>
+                    <a class="nav-link" href="#Início">Início</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#divInformation">Informações</a>
+                    <a class="nav-link" href="#Informações">Informações</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#footer">Contato</a>
+                    <a class="nav-link" href="#Quiz">Quiz</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Contato">Contato</a>
                 </li>
             </ul>
         </div>
@@ -79,17 +82,17 @@
                 d="M0,128L120,149.3C240,171,480,213,720,224C960,235,1200,213,1320,202.7L1440,192L1440,320L1320,320C1200,320,960,320,720,320C480,320,240,320,120,320L0,320Z">
             </path>
         </svg>
-        <div class="divInformation" id="divInformation">
+        <div class="divInformation" id="Informações">
             <div class="container text-white anime">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="titulo"><img
+                        <h2 class="tituloInformacoes"><img
                                 src="img/imgLibras.png"
                                 alt="Logo Libras" style="width: 50px; height: 50px;"> &nbsp; VOCÊ SABIA?</h2>
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <div class="col-12 col-sm-6 col-md-6 col-lg-7 mt-5">
+                    <div class="descInformacoes col-12 col-sm-6 col-md-6 col-lg-7 mt-5">
                         <p>
                             A Língua Brasileira de Sinais, conhecida amplamente por Libras, é usada por milhões de
                             brasileiros surdos e também ouvintes. De acordo com o IBGE, há mais de dez milhões de
@@ -126,7 +129,52 @@
         </div>
     </div>
 
-    <footer class="bg-dark text-center text-white" id="footer">
+    
+    <div class="divEnglobaQuiz" id="Quiz">
+        <div class="divQuiz" id="divQuiz">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0D5166" fill-opacity="1" d="M0,192L80,181.3C160,171,320,149,480,160C640,171,800,213,960,229.3C1120,245,1280,235,1360,229.3L1440,224L1440,0L1360,0C1280,0,1120,0,960,0C800,0,640,0,480,0C320,0,160,0,80,0L0,0Z"></path></svg>
+            <div class="container text-white anime">
+                <div class="row" style="padding-bottom: 50px;">
+                    <div class="col-12">
+                        <h2 class="tituloQuiz text-center">
+                            QUIZ
+                        </h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 col-md-12 col-lg-6 lottieQuiz">
+                        <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                        <lottie-player src="https://assets10.lottiefiles.com/packages/lf20_5y1ydn5i.json"  background="transparent"  speed="1"  loop  autoplay></lottie-player>
+                    </div>
+                    <div class="descQuiz col-12 col-md-12 col-lg-6 ">
+                        <h4>
+                            Nosso quiz ainda está em desenvolvimento, estamos trabalhando para que tenha novos modos de jogo, no momento temos só de letras. 
+                            <br><br>
+                            Em breve iremos adicionar modo com números e frases. Se tiver alguma sugestão de modo, entre em contato conosco.
+                        </h4>
+                    </div>
+                </div>
+                <div class="row divBtnQuiz text-center">
+                    <div class="col-lg-4 col-md-12 divBtnQuiz">
+                        <a href="quiz.html">
+                        <button class="btn btn-primary btnQuiz">
+                            <i class="fa fa-play-circle" style="padding-right: 20px;"></i> Jogar
+                        </button>
+                        </a>
+                    </div>
+                    <div class="col-lg-4 col-md-12 divBtnQuiz">
+                        <a href="quiz.html">
+                        <button class="btn btn-primary btnQuiz">
+                            <i class="fa fa-question-circle" style="padding-right: 20px;"></i> Informações
+                        </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-dark text-center text-white" id="Contato">
         <div class="container p-5 pb-0">
             <!-- Section: Rede Social -->
             <div class="logoFooter">

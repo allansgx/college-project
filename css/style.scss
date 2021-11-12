@@ -1,0 +1,485 @@
+@import './components/responsivePhone';
+
+$cor-primaira: #0D5166;
+$cor-secundaria: #48878A;
+$cor-terciaria: #599C8B;
+$cor-quiz: #082d38;
+$cor-destaque: #E08104;
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+	font-family: 'Roboto', sans-serif;
+}
+
+section {
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 20px 0;
+	text-align: center;
+}
+
+/*---------- NAVBAR ------------*/
+#logo {
+    padding-left: 10%;
+}
+.navbar-logo{
+	padding: 15px;
+	color: #fff;
+}
+.navbar-mainbg{
+	background-color: $cor-primaira;
+	padding: 0px;
+}
+#navbarSupportedContent{
+	overflow: hidden;
+	position: relative;
+    justify-content: center;
+	
+    ul{
+        padding: 0px;
+        margin: 0px;
+
+        li {
+            list-style-type: none;
+            float: left;
+
+            &.active {
+
+                a{
+                    color: $cor-primaira;
+                    background-color: transparent;
+                    transition: all 0.7s;
+
+                    :not(:only-child) {
+                        &::after {
+                            transform: rotate(90deg);
+                        }
+                    }
+                }
+            }
+
+            a{
+                color: rgba(255,255,255,0.5);
+                text-decoration: none;
+                font-size: 15px;
+                display: block;
+                padding: 20px 20px;
+                transition-duration:0.6s;
+                transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                position: relative;
+
+                :not(:only-child) {
+                    &::after {
+                        content: "\f105";
+                        position: absolute;
+                        right: 20px;
+                        top: 10px;
+                        font-size: 14px;
+                        font-family: "Font Awesome 5 Free";
+                        display: inline-block;
+                        padding-right: 3px;
+                        vertical-align: middle;
+                        font-weight: 900;
+                        transition: 0.5s;
+                    }
+                }
+
+                i{
+                    margin-right: 10px;
+                }
+            }
+        }
+    }
+}
+
+.hori-selector{
+	display:inline-block;
+	position:absolute;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	transition-duration:0.6s;
+	transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	background-color: #fff;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	margin-top: 10px;
+}
+.hori-selector .right,
+.hori-selector .left{
+	position: absolute;
+	width: 25px;
+	height: 25px;
+	background-color: #fff;
+	bottom: 10px;
+}
+
+.hori-selector .right:before,
+.hori-selector .left:before{
+	content: '';
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color:  $cor-primaira;
+}
+.hori-selector .right{
+	right: -25px;
+}
+.hori-selector .left{
+	left: -25px;
+}
+.hori-selector .right:before{
+	bottom: 0;
+    right: -25px;
+}
+.hori-selector .left:before{
+	bottom: 0;
+    left: -25px;
+}
+
+/*-------------------- BODY -------------------*/
+.divInformation {
+	width: 100%;
+	min-height: 460px;
+	background-color: $cor-primaira;
+}
+.lottieInformation {
+	width: 300px; 
+	height: 300px;
+}
+
+.divQuiz {
+	width: 100%;
+	height: 900px;
+	background-color: $cor-quiz;
+
+	.lottieQuiz {
+		margin-top: -7%;
+	}
+
+	.tituloQuiz {
+		font-size: 40px;
+		font-weight: 800;
+	}
+
+	.divBtnQuiz {
+		display: flex;
+		justify-content: center;
+		padding-top: 25px;
+
+		.btnQuiz {
+			background-color: transparent;
+			border: 1px solid $cor-destaque;
+			width: 300px;
+			height: 90px;
+			font-size: 20px;
+			text-transform: uppercase;
+			
+			-webkit-transition: color 150ms ease-in-out;
+			transition: color 150ms ease-in-out;
+
+			&:hover {
+
+				transition: all .3s ease-in-out;
+				color: black;
+				background: $cor-destaque;				
+			}
+
+			a {
+				text-decoration: none;
+				color: white;
+			}
+		}
+	}
+
+	.lottieQuiz {
+		width: 400px;
+		height: 400px;
+	}
+}
+
+/* --------------- BOTÃO VER MAIS ---------------- */
+.mouse-cursor-gradient-tracking {
+	position: relative;
+	background: $cor-secundaria;
+	padding: 0.5rem 1rem;
+	font-size: 1.2rem;
+	border: none;
+	color: white;
+	cursor: pointer;
+	outline: none;
+	overflow: hidden;
+
+    span {
+        position: relative;
+        }
+
+    &::before {
+        --size: 0;
+        content: '';
+        position: absolute;
+        left: var(--x);
+        top: var(--y);
+        width: var(--size);
+        height: var(--size);
+        background: radial-gradient(circle closest-side, #ebb978, transparent);
+        transform: translate(-50%, -50%);
+        transition: width 0.2s ease, height 0.2s ease;
+        }
+}
+
+.mouse-cursor-gradient-tracking:hover:before {
+    --size: 200px;
+}
+
+/* --------------- BOTÃO PDF ---------------- */
+.btnPDF {
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;
+  }
+
+.mouse-cursor-pdf-tracking {
+    position: relative;
+    background: $cor-secundaria;
+    padding: 0.5rem 1rem;
+    font-size: 1.2rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    overflow: hidden;
+
+    transition: all .3s ease;
+
+    span {
+        position: relative;
+        }
+
+    &:hover {
+        background: $cor-terciaria;
+    }
+}
+
+//   .fifth:after {
+// 	content: '';
+// 	position: absolute;
+// 	display: block;
+// 	top: 0;
+// 	left: 50%;
+// 	-webkit-transform: translateX(-50%);
+// 			transform: translateX(-50%);
+// 	width: 0;
+// 	height: 100%;
+// 	background: #8e44ad;
+// 	z-index: -1;
+// 	-webkit-transition: width 150ms ease-in-out;
+// 	transition: width 150ms ease-in-out;
+//   }
+//   .fifth:hover {
+// 	color: #fff;
+//   }
+
+/* --------------- DEFINIÇÕES ANIMAÇÃO SCROLL ---------------- */
+.js {
+	.anime {
+		opacity: 0;
+		transform: translate3D(-50px, 0px, 0px);
+	}
+	
+	.anime-init {
+		opacity: 1;
+		transform: translate3D(0px, 0px, 0px);
+		transition: .3s all ease;
+	}
+}
+
+.box {
+	width: 260px;
+	height: 100px;
+	border-radius: 5px;
+	margin: 0 auto 20px auto;
+
+	p {
+		padding-top: 100px;
+		font-size: 24px;
+		color: white;
+		font-family: monaco;
+	}
+}
+
+#azul {
+	background: #05ACED;
+}
+
+#verde {
+	background: #8BC84C;
+}
+
+#roxo {
+	background: #8844EE;
+}
+
+#mouse {
+	display: block;
+	width: 22px;
+	height: 40px;
+	border-radius: 20px;
+	border: 4px solid #8844EE;
+	text-align: center;
+	position: fixed;
+	left: 0px;
+	right: 0px;
+	bottom: 20px;
+	margin: 0 auto;
+
+	&::before {
+		content: '';
+		display: inline-block;
+		width: 4px;
+		height: 8px;
+		position: relative;
+		border-radius: 4px;
+		background: #8844EE;
+		animation-name: mouse;
+	  animation-duration: .7s;
+		animation-iteration-count: infinite;
+	}
+}
+
+@keyframes mouse {
+	from {
+		top: 0px;
+	}
+  to {
+		top: 6px;
+	}
+}
+
+h1 {
+	font-size: 14px;
+	font-family: monaco;
+	text-transform: uppercase;
+	letter-spacing: .1em;
+	color: #8844EE;
+	margin-bottom: 40px;
+}
+
+#origamid {
+	font-family: monaco;
+	text-decoration: none;
+	color: #84E;
+	display: inline-block;
+}
+
+#origamid::after, #origamid::before {
+	content: '';
+	display: block;
+	background: #84E;
+	width: 0;
+	height: 2px;
+	border-radius: 4px;
+	margin: 6px auto 6px auto;
+	transition: all .2s ease;
+}
+
+#origamid:hover::after, #origamid:hover::before {
+	width: 100%;
+}
+
+@media (max-width: 991px){
+	html, body {
+		max-width: 100%; overflow-x: hidden; 
+	}
+	#navbarSupportedContent ul li a{
+		padding: 12px 30px;
+	}
+	.hori-selector{
+		margin-top: 0px;
+		margin-left: 10px;
+		border-radius: 0;
+		border-top-left-radius: 25px;
+		border-bottom-left-radius: 25px;
+	}
+	.hori-selector .left,
+	.hori-selector .right{
+		right: 10px;
+	}
+	.hori-selector .left{
+		top: -25px;
+		left: auto;
+	}
+	.hori-selector .right{
+		bottom: -25px;
+	}
+	.hori-selector .left:before{
+		left: -25px;
+		top: -25px;
+	}
+	.hori-selector .right:before{
+		bottom: -25px;
+		left: -25px;
+	}
+	
+	.imgLottie {
+		margin-left: 35%;
+	}
+	.legendLottie {
+		margin-left: 20%;
+		font-size: 15px;
+	}
+
+	.imgAlfabetoLibras{
+		width: 100%;
+		height: 100%;
+	}
+
+	.divInformation {
+		width: 100%;
+		height: 800px;
+	}
+	.tituloInformacoes{ 
+		text-align: center;
+	}
+	.descInformacoes {
+		padding: 0 30px 0 30px;
+		text-align: justify;
+	}
+
+	.divQuiz {
+		width: 100%;
+		height: 1100px;
+	}
+	.divBtnQuiz {
+		padding-top: 30px;
+	}
+	.descQuiz {
+		text-align: left;
+		padding: 0 30px 0 30px;
+	}
+	.lottieQuiz {
+		width: 100px;
+		height: 100px;
+	}
+
+	.btnPDF {
+		display: none;
+	}
+}
+
+@media (max-width: 557px){
+	.divInformation {
+		width: 100%;
+		height: 700px;
+	}
+	.lottieInformation {
+		width: 550px; 
+		height: 100px;
+		margin-top: -22%;
+	}
+}

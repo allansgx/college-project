@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "AAEA,AAAA,CAAC,CAAC;EACE,WAAW,EAAE,oBAAoB;EAEjC,OAAO,EAAE,CAAC;EACV,MAAM,EAAE,CAAC;CACZ;;AAED,AAAA,IAAI,CAAC;ECRD,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,MAAM;EACvB,WAAW,EAAE,MAAM;EDQnB,cAAc,EAAE,MAAM;EAEtB,KAAK,EAAE,KAAK;EACZ,MAAM,EAAE,KAAK;EAEb,gBAAgB,EAAE,OAAO;EACzB,KAAK,EAAE,KAAK;EACZ,QAAQ,EAAE,MAAM;CACnB",
+    "sources": [
+        "placar.scss",
+        "components/_function.scss"
+    ],
+    "names": [],
+    "file": "placar.css"
+}
