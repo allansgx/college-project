@@ -21,6 +21,10 @@
     padding: 50px 0 10px 0;
     border-radius: 10px;
   }
+  #resultFinal {
+    text-align: center;
+    font-size: 17px;
+  }
 }
 
 @media (min-width: 992px) {

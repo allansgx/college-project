@@ -6,6 +6,7 @@ window.onload = function() {
     const t = 2000
     $(".controls").hide().slideDown(t)
     $(".decorationIcon").hide().fadeTo(3000, 1)
+    $(".resultFinal").hide()
 }
 
 const container = document.getElementById('container')
@@ -17,6 +18,7 @@ const questionContainerElement = document.getElementById('question-container')
 const questionElement = document.getElementById('question')
 const imgElement = document.getElementById('imgQuestion')
 const answerButtonElement = document.getElementById('answer-buttons')
+const resultFinal = document.getElementById('resultFinal')
 
 // Embaralhar perguntas
 let shuffledQuestions, currentQuestionIndex
@@ -42,6 +44,9 @@ function startGame() {
     typewriter.classList.add('hide')
     scoreboard.classList.add('hide')
     container.classList.add('background')
+    question.classList.remove('d-none')
+    $(".resultFinal").hide(200)
+    $(".question-correct").show()
 
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 1;
@@ -95,7 +100,7 @@ function selectAnswer(e) {
     Array.from(answerButtonElement.children).forEach(button => {
         setStatusClass(button, button.dataset.correct)
     })
-    if (shuffledQuestions.length > currentQuestionIndex + 1 && currentQuestionIndex < 10) {
+    if (shuffledQuestions.length > currentQuestionIndex + 1 && currentQuestionIndex <= 9) {
         nextButton.classList.remove('hide')
 
         if (correct) {
@@ -105,9 +110,28 @@ function selectAnswer(e) {
         }
 
     } else {
-        startButton.innerText = 'Recomeçar'
-        startButton.classList.remove('hide')
+        setResultFinal();
     }
+}
+
+function setResultFinal(e) {
+    startButton.innerText = 'Recomeçar'
+        question.classList.add('d-none')
+        $(".question-correct").hide()
+        $(".resultFinal").slideDown(200)
+        if (correctQuestion >= 2) {
+            resultFinal.innerHTML = `Você acertou ${correctQuestion + 1} questões.`
+        } else if (correctQuestion == 1) {
+            resultFinal.innerHTML = `Você acertou ${correctQuestion} questão.`
+        } else {
+            
+            lottieResultFinal.innerHTML = `<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+                                            <lottie-player src="https://assets8.lottiefiles.com/packages/lf20_pyiyoyxf.json"  background="transparent"  speed="1"  style="width: 200px; height: 200px;"  loop  autoplay></lottie-player>`
+            titleResultFinal.innerHTML = ''
+            resultFinal.innerHTML = `Você não acertou nenhuma questão.`
+        }
+
+        startButton.classList.remove('hide')
 }
 
 function setStatusClass(element, correct) {
