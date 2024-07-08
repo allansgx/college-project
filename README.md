@@ -1,2 +1,3 @@
 # https://systemdeaf.netlify.app/
-Site feito com intuito de ajudar pessoas surdas e mudas e incentivar também todo mundo a aprender a linguagem de sinais, que é muito importante.
+
+Site made with the intention of helping deaf and mute people and also encouraging everyone to learn sign language, which is very important.
